@@ -26,8 +26,7 @@
 				videoId: vidId,
 				playerVars: { 'autoplay': 1, 'playsinline': 1 },
 				events: {
-					'onReady': onPlayerReady,
-					'onStateChange': onPlayerStateChange
+					'onReady': onPlayerReady
 				}
 			});
 		}
@@ -35,17 +34,6 @@
 		function onPlayerReady(event) {
 			event.target.mute();
 			event.target.playVideo();
-		}
-		
-		function onPlayerStateChange(event) {
-			if (event.data == YT.PlayerState.ENDED) {
-				player.seekTo(0);
-				player.playVideo();
-			}
-		}
-		
-		function stopVideo() {
-			player.stopVideo();
 		}
 		
 		
