@@ -50,7 +50,7 @@
 		
 		
 		function updateVideo(){
-			$.get( "videoId.txt", function( data ) {
+			$.get("videoId.txt?"+Math.floor(Math.random()*1000), function( data ) {
 				if(data!=vidId){
 					vidId=data;
 					player.loadVideoById(vidId);
